@@ -1,0 +1,208 @@
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #090909;
+    margin: 0;
+    overflow: hidden;
+}
+
+.overlay-text {
+    font-family: "Poppins", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 32.5px;
+    color: rgb(0, 225, 255);
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -252%);
+    z-index: 1;
+    text-shadow: rgba(0, 255, 255, 1) 0px 0px 15.5px;
+    
+    
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .overlay-text2 {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20.5px;
+    color: rgb(0, 195, 255);
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -245%);
+    z-index: 1;
+    text-shadow: rgba(41, 223, 255, 0.459) 0px 0px 5px;
+    
+    
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .viewcount {
+    font-family: "Poppins", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 19.5px;
+    color: rgb(0, 225, 255);
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-390%, 80%);
+    z-index: 1;
+    text-shadow: rgba(0, 255, 255, 1) 0px 0px 15.5px;
+    
+    
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+body {
+    height: 100vh;
+    background-image: url('wallpaper.png');
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    position: relative;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(49, 89, 175, 0.11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 620px;
+    height: 450px;
+    overflow: hidden;
+    box-shadow: 0px 0px 25px rgba(36, 116, 255, 0.363);
+    animation: scaleUp 0.5s ease-out; /* Apply animation */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(52, 143, 240, 0.5), rgba(52, 143, 240, 1));
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.card .content {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.75); /* Start from half the size */
+        opacity: 0; /* Start with invisible */
+    }
+    to {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* End with full visibility */
+    }
+}
+
+
+.logo {
+    width: 175px;
+    height: auto;
+    border-radius: 150px;
+    transform: translate(0%, -60%);
+    overflow: hidden;
+    user-select: none;
+}
+
+audio {
+    display: none;
+}
+
+.snowflake {
+    position: fixed;
+    top: -50px;
+    width: 250px;
+    height: 250px;
+    background-image: url('snowflake.png');
+    background-size: cover;
+    opacity: 1;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;  
+    }
+}
+
+::selection {
+    background-color: rgba(0, 225, 255, 0.822);
+    color: rgb(255, 255, 255);
+}
+
+#youtubelogo {
+    width: 70px;
+    position: absolute;
+    top: 530px;
+    left: 855px;
+    cursor: pointer;
+    z-index: 10;
+    animation: scaleUp 0.5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.25s ease-out;
+}
+
+#youtubelogo:hover {
+    transform: scale(1.1); 
+}
+
+#robloxlogo {
+    width: 70px;
+    position: absolute;
+    top: 525px;
+    left: 992px;
+    cursor: pointer;
+    z-index: 10;  
+    animation: scaleUp 0.5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.25s ease-out;
+}
+
+#robloxlogo:hover {
+    transform: scale(1.1); 
+}

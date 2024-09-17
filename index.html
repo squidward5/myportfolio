@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>squidward - portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        .viewcount {
+            font-family: "Poppins", system-ui;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 19.5px;
+            color: rgb(0, 225, 255);
+            position: absolute;
+            top: 90%;
+            left: 0%;
+            transform: translate(0, 0);
+            z-index: 1;
+            text-shadow: rgba(0, 255, 255, 1) 0px 0px 15.5px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="youtube.png" id="youtubelogo" onclick="window.open('https://www.youtube.com/@Amber2D');">
+    <img src="robloxlogo.png" id="robloxlogo" onclick="window.open('https://www.roblox.com/users/163814367/profile');">
+    <div class="snowflakes-container"></div>
+
+    <div class="card">
+        <img src="profile.jpg" alt="Profile" class="logo">
+        <div class="viewcount">Views: <span id="viewCounter">0</span></div>
+        <h2 class="overlay-text">squidward</h2>
+        <h4 class="overlay-text2">Video Editor, HTML, CSS</h4>
+    </div>
+
+    <audio controls autoplay loop>
+        <source src="(free) osamason type beat - finally.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function updateViewCount() {
+            let viewCount = localStorage.getItem('viewCount');
+            
+            if (!viewCount) {
+                viewCount = 0;
+            }
+            
+            viewCount = parseInt(viewCount) + 1;
+            
+            localStorage.setItem('viewCount', viewCount);
+            
+            document.getElementById('viewCounter').innerText = viewCount;
+        }
+
+        window.onload = function() {
+            updateViewCount();
+        };
+
+        // generating snowflakes and stuff idk
+        function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            snowflake.style.opacity = Math.random(35, 100);
+            snowflake.style.width = `${Math.random() * 20 + 10}px`;
+            snowflake.style.height = snowflake.style.width;
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 6000); 
+    }
+
+    setInterval(createSnowflake, 50);
+
+    </script>
+
+</body>
+</html>
